@@ -4,11 +4,11 @@ public class DatagramSocketClient {
 
 public static void main(String[] args) throws Exception {
 
-String line "Connected with Client";
+String line= "Connected with Client";
 
 /* Create new datagram socket at client side */
 
-DatagramSocket clientSocket new DatagramSocket();
+DatagramSocket clientSocket =new DatagramSocket();
 
 /* Get IP Address using the InetAddress class */
 
@@ -22,7 +22,7 @@ sendData line.getBytes();
 
 /* Create the send datagram packet */
 
-DatagramPacket sendPacket new DatagramPacket(sendData, sendData.length, IPAddress, 9000);
+DatagramPacket sendPacket= new DatagramPacket(sendData, sendData.length, IPAddress, 9000);
 
 /* Send the packet using client socket */
 
@@ -36,7 +36,7 @@ DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.lengt
 /*Receive the packet using client socket */
 clientSocket.receive(receivePacket);
 /*Convert the message received into the string */
-String messageReceived = new String(receivePacket.getData(),receivePacket.getOffset(),receivePacket.getLength());
+String messageReceived = new String(receivePacket.getData(),receivePacket.getoffset(),receivePacket.getLength());
 System.out.println("Message typed at server side is: "+ messageReceived);
 
 }
